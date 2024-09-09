@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: black;
+    color: whitesmoke;
+    font-family: "spline sans mono", monospace;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 20px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+    position: absolute;
+    right: 30px;
+}
+
+header ul li {
+    margin: 0 10px;
+}
+
+header ul li a {
+    color: white;
+}
+
+header ul li a:hover {
+    color: #B5E2FA;
+}
+
+.one,
+.two {
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.three {
+    display: flex;
+    height: 120vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.heading {
+    width: 80vw;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 50px;
+}
+
+.heading h1 {
+    font-family: 'Gloock', serif;
+    font-size: 5rem;
+    color: #ffffff;
+}
+
+.vector-background {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: 700px;
+    left: 30%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.line {
+    position: absolute;
+    width: 1px;
+    height: 50%;
+    background-color: white;
+    transform-origin: 50% 0%;
+}
+
+.vector,
+.vector2,
+.vector3,
+.vector-section-two,
+.vector-section-four {
+    position: absolute;
+    height: 300px;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.vector {
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.vector-section-two {
+    top: 900px;
+    right: 15%;
+    z-index: -1;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.vector-section-four {
+    bottom: -150px;
+    right: 15%;
+    z-index: -1;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.vector2,
+.vector3 {
+    top: 200px;
+    right: -10%;
+}
+
+.vector2 {
+    transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.vector3 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.one button {
+    padding: 25px 45px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.one button .click{
+    padding: 30px;
+}
+.one button:hover {
+    background: #B5E2FA;
+    color: black;
+}
+
+.two {
+    position: relative;
+}
+
+.two .whole {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.two .container-1,
+.two .container-2 {
+    display: flex;
+    margin: 10px;
+}
+
+.container-1 .left,
+.container-1 .right,
+.container-2 .left,
+.container-2 .right {
+    background-color: #B0B0B0;
+    margin: 10px;
+}
+
+.container-1 .left {
+    border-radius: 60px 0px 60px 60px;
+    height: 200px;
+    width: 300px;
+}
+
+.container-1 .left {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-1 .left p {
+    color: black;
+    font-size: small;
+    padding: 15px;
+    font-family: 'spline sans mono', monospace;
+}
+
+.container-1 .right {
+    border-radius: 0px 200px 0px 200px;
+    height: 200px;
+    width: 350px;
+    overflow: hidden;
+}
+
+.container-1 .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(1);
+    transition: filter 0.7s ease;
+}
+
+.container-1 .right img:hover {
+    filter: grayscale(0);
+}
+
+.container-2 .left {
+    border-radius: 200px 200px 200px 0px;
+    height: 100px;
+    width: 300px;
+}
+
+.container-2 .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(1);
+    transition: filter 0.7s ease;
+}
+
+.container-2 .left img:hover {
+    filter: grayscale(0);
+}
+
+.container-2 .right {
+    border-radius: 200px;
+    height: 100px;
+    width: 350px;
+}
+
+.container-2 .right {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-2 .right p {
+    color: black;
+    font-size: small;
+    padding: 15px;
+    font-family: 'spline sans mono', monospace;
+}
+
+.three {
+    margin-top: 20px;
+}
+
+.three h1 {
+    color: #B5E2FA;
+}
+
+.three .about1,
+.three .about2,
+.three .about3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 16px 0;
+}
+
+
+.about1 .left,
+.about1 .right,
+.about2 .left,
+.about2 .right,
+.about3 .left,
+.about3 .right {
+    height: 300px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.about1 .right,
+.about2 .right,
+.about3 .left {
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.about1 .left {
+    position: relative;
+}
+
+.about1 .left img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+
+}
+
+.about2 .left img {
+    height: 300px;
+    width: 300px;
+    border-radius: 24px;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter 0.7s ease;
+}
+
+.about2 .left img:hover {
+    filter: grayscale(0);
+}
+
+.about3 .right img {
+    height: 300px;
+    width: 300px;
+    border-radius: 24px;
+    object-fit: cover;
+    filter: grayscale(1);
+    border-radius: 40px 200px 200px 200px;
+    transition: filter 0.7s ease;
+}
+
+.about3 .right img:hover {
+    filter: grayscale(0);
+}
+
+.four {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.four p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.four h1 {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.four button {
+    padding: 25px 45px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.four button:hover {
+    background: #B5E2FA;
+    color: black;
+}
+
+footer p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Media Queries for Responsiveness */
+
+/* Laptops and desktops */
+@media screen and (max-width: 1024px) {
+
+    .one,
+    .two,
+    .three {
+        height: auto;
+        padding: 60px 20px;
+        /* Add more padding for better spacing */
+    }
+    nav{
+        display: none;
+    }
+    .heading {
+        width: 90vw;
+        /* Ensure heading takes most of the available space */
+    }
+
+    .about1,
+    .about2,
+    .about3 {
+        flex-direction: column;
+        /* Stack columns on top of each other */
+    }
+
+    .about1 .left,
+    .about1 .right,
+    .about2 .left,
+    .about2 .right,
+    .about3 .left,
+    .about3 .right {
+        width: 100%;
+        /* Make content take full width on smaller screens */
+        padding: 20px 0;
+    }
+
+    .about2 .left img,
+    .about3 .right img {
+        height: auto;
+        /* Ensure images resize proportionally */
+        width: 90%;
+        /* Limit image width to prevent overflow */
+    }
+
+    .container-1 .left,
+    .container-1 .right,
+    .container-2 .left,
+    .container-2 .right {
+        width: 90%;
+        /* Keep containers responsive */
+        height: auto;
+    }
+
+    .container-1 .left,
+    .container-2 .right {
+        padding: 20px;
+    }
+}
+
+/* Tablets and smaller laptops */
+@media screen and (max-width: 768px) {
+    header ul {
+        position: static;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+nav {
+    display: none;
+}
+    .one,
+    .two,
+    .three {
+        padding: 40px 15px;
+        /* Adjust padding for better spacing on smaller screens */
+    }
+
+    .heading h1 {
+        font-size: 36px;
+        /* Reduce heading font size */
+    }
+
+    .four h1 {
+        font-size: 32px;
+        /* Adjust section heading */
+    }
+
+    .four button {
+        padding: 20px 35px;
+        /* Adjust button padding */
+    }
+
+    .container-1,
+    .container-2 {
+        flex-direction: column;
+        /* Stack elements vertically */
+    }
+
+    .container-1 .left,
+    .container-1 .right,
+    .container-2 .left,
+    .container-2 .right {
+        width: 100%;
+        /* Full width containers */
+        height: auto;
+        margin-bottom: 20px;
+        /* Add some spacing between elements */
+    }
+
+    .about1,
+    .about2,
+    .about3 {
+        padding: 40px 10px;
+        /* Add more padding for breathing room */
+    }
+
+    .about1 .left img,
+    .about2 .left img,
+    .about3 .right img {
+        width: 100%;
+        /* Ensure images fill the width of the screen */
+        height: auto;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    header nav {
+        flex-direction: column;
+        display: none;
+    }
+nav {
+    display: none;
+}
+    header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    .heading {
+        width: 95vw;
+        padding: 20px;
+        /* Add padding for readability */
+    }
+
+    .heading h1 {
+        font-size: 28px;
+        /* Further reduce heading font size */
+    }
+
+    .one button,
+    .four button {
+        padding: 15px 25px;
+        /* Reduce button padding for smaller screens */
+    }
+
+    .four h1 {
+        font-size: 28px;
+    }
+
+    .container-1,
+    .container-2 {
+        flex-direction: column;
+        /* Stack containers vertically */
+        margin-bottom: 20px;
+    }
+
+    .container-1 .left,
+    .container-1 .right,
+    .container-2 .left,
+    .container-2 .right {
+        width: 100%;
+        height: auto;
+        /* Ensure content adapts */
+    }
+
+    .about1 .left img,
+    .about2 .left img,
+    .about3 .right img {
+        width: 100%;
+        height: auto;
+        /* Make images responsive */
+    }
+
+    .about1 .left,
+    .about1 .right,
+    .about2 .left,
+    .about2 .right,
+    .about3 .left,
+    .about3 .right {
+        width: 100%;
+        padding: 20px 0;
+        margin: 50px;
+        /* Add some spacing */
+    }
+    .about3 .right img{
+        position: relative;
+    }
+    .about1 img{
+        z-index: 1;
+    }
+    .vector1,.vector2,.vector3{
+        z-index: 0;
+    }
+}

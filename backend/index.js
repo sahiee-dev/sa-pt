@@ -99,14 +99,14 @@ app.post('/api/chats',
                 );
             }
 
-            res.status(200).json({ _id: savedChat._id });
+            res.status(200).send.json({ _id: savedChat._id });
         } catch (err) {
             console.error(err);
             res.status(500).json({ error: "Error creating chat" });
         }
     });
 
-app.get("/api/userchats", ClerkExpressRequireAuth(), async (req, res) => {
+app.get("/api/userchats", async (req, res) => {
     const userId = req.auth.userId;
     try {
         const userChats = await Userchats.findOne({ userID: userId });

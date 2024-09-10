@@ -4,7 +4,7 @@ dotenv.config();  // Load environment variables from .env
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import url, { fileURLToPath } from 'url';
+import { fileURLToPath } from 'url';
 import ImageKit from 'imagekit';
 import mongoose from 'mongoose';
 import Userchats from './models/userChats.js';
@@ -14,8 +14,10 @@ import Chat from './models/chat.js';
 const port = process.env.PORT || 3000;
 const app = express();
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+console.log(__dirname);
+console.log("Serving static files from:", path.join(__dirname, "/client/dist/index.html"));
 
 // CORS configuration
 app.use(cors({
@@ -45,6 +47,9 @@ const imagekit = new ImageKit({
     publicKey: process.env.IMAGE_KIT_PUBLICKEY,
     privateKey: process.env.IMAGE_KIT_PRIVATEKEY
 });
+
+// Root route - simple response for the base URL
+
 
 app.get('/api/upload', (req, res) => {
     const result = imagekit.getAuthenticationParameters();
@@ -169,12 +174,13 @@ app.use((err, req, res, next) => {
     res.status(401).json({ error: 'Unauthenticated!' });
 });
 
+// Serve static files
+app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.use(express.static(path.join(__dirname,"../client")))
-
-app.get("*",(req,res) => {
-    res.sendFile(path.join(__dirname,"../client", "index.html"))
-})
+// Handle client-side routing
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/client/dist/index.html"));
+});
 
 connect().then(() => {
     app.listen(port, () => {
